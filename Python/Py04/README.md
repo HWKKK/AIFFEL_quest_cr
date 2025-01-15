@@ -40,10 +40,9 @@
 정수 입력받기 코드가 복잡하지 않아 좋았던 것 같습니다. 
 저 같은 경우는 2.0 으로 적어도 정수로 취급하기 위해서 FLOAT를 먼저 써서 실수로 변환 후에, 정수인지 아닌지 판단하는 과정을 한번 더 거쳤습니다. 이 부분도 한번 고려해보시면 좋을 것 같습니다! 
 operator 인풋 뒤에 strip()을 주어 오류 예방한 점이 좋아 보였습니다! 
-<img width="232" alt="image" src="https://github.com/user-attachments/assets/e5a4eb46-f5bc-4dcd-b224-737f39a97bd8" />
 
-# 코드 리뷰 시 참고한 링크가 있다면 링크와 간략한 설명을 첨부합니다.
-# 코드 리뷰를 통해 개선한 코드가 있다면 코드와 간략한 설명을 첨부합니다.
+
+<img width="232" alt="image" src="https://github.com/user-attachments/assets/e5a4eb46-f5bc-4dcd-b224-737f39a97bd8" />
 ```
 
 
