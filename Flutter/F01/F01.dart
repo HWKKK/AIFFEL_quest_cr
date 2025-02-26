@@ -29,13 +29,13 @@ class PomodoroTimer {
   }
 
   void startWorkTimer() {
-            int remainingTime = workTime; // 잔여 시간 정의
+      int remainingTime = workTime; // 잔여 시간 정의
 
-            Timer.periodic(Duration(seconds: 1), (timer) { //1초씩 세면서, 잔여시간이 0이 되면 타이머 멈춤
+      Timer.periodic(Duration(seconds: 1), (timer) { //1초씩 세면서, 잔여시간이 0이 되면 타이머 멈춤
       if (remainingTime == 0) {
-      timer.cancel();
-      cycleCount++;
-      print("작업 시간이 종료되었습니다. 휴식 시간을 시작합니다.");
+        timer.cancel();
+        cycleCount++;
+        print("작업 시간이 종료되었습니다. 휴식 시간을 시작합니다.");
         startBreakTimer();
       } else {
         remainingTime--;
@@ -89,5 +89,4 @@ private 변수 선언을 할만한 부분이 있었지만 지정하지 않았습
 도움을 받아 구성한 코드를 이해하는데 집중했었는데,
 해원님의 논리적이고 전략적인 코드 구상과 코드 결과를 보고 감탄하였고, 코딩을 하는데 있어 어떻게 시작해야 할지 배울 수 있었음.
 코딩 구성을 이해하기 위해 공부하던 중, late 개념과, 클래스가 타입으로 선언될 수 있다는 것을 알게 되었음.
-
 */
