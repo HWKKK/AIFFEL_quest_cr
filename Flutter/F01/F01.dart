@@ -19,9 +19,9 @@ import 'dart:async';
 class PomodoroTimer {
   //테스트의 편리성을 위해, 각 시간은 분이 아닌 초로 지정하였습니다.
   int cycleCount = 0; // 사이클 돈 횟수
-  int workTime = 5; // 작업 시간
-  int breakTime = 3; // 휴식 시간
-  int forthBreakTime = 10; // 4회차 휴식 시간
+  int workTime = 5; // 작업 시간 (초)
+  int breakTime = 3; // 휴식 시간 (초)
+  int forthBreakTime = 10; // 4회차 휴식 시간 (초)
 
   void start() { // 타이머 기능 정의
     print("Pomodoro 타이머를 시작합니다.");
@@ -39,7 +39,9 @@ class PomodoroTimer {
         startBreakTimer();
       } else {
         remainingTime--;
-        print("잔여시간: $remainingTime");
+        int remainingMinutes = remainingTime ~/ 60;
+        int remainingSeconds = remainingTime % 60;
+        print("잔여시간: $remainingMinutes분 $remainingSeconds초");
       }
     });
   }
@@ -62,7 +64,9 @@ class PomodoroTimer {
         startWorkTimer();
       } else {
         remainingTime--;
-        print("잔여시간: $remainingTime");
+        int remainingMinutes = remainingTime ~/ 60;
+        int remainingSeconds = remainingTime % 60;
+        print("잔여시간: $remainingMinutes분 $remainingSeconds초");
       }
     });
   }
