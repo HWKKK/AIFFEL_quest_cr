@@ -7,7 +7,7 @@
 # 1. 정보 구조 분석
 
 ### 레이블링 구조 및 화면 캡쳐 이미지:
-([이미지 보기](https://github.com/HWKKK/AIFFEL_quest_cr/blob/main/Flutter/F04/%5B1-1%5D%20%EC%A0%95%EB%B3%B4%20%EA%B5%AC%EC%A1%B0%20%EB%B6%84%EC%84%9D.png))
+https://github.com/HWKKK/AIFFEL_quest_cr/blob/main/Flutter/F04/%5B1-1%5D%20%EC%A0%95%EB%B3%B4%20%EA%B5%AC%EC%A1%B0%20%EB%B6%84%EC%84%9D.png?raw=true
 * 이미지가 열리기까지 시간이 걸립니다. 만일 이미지가 열리지 않는다면, 레포지토리 내 "[1-1] 정보 구조 분석.png" 를 참고해주세요.
 
 ### 주요 탭 구조:
