@@ -1,3 +1,11 @@
+/*
+회고:
+아직 구현해야 할 기능들이 많은데, 시간의 문제로 꼭 필요한 기능들만 구현하고 마무리하는 것 같아 아쉽다.
+하단 슬라이드 메뉴는 flutter 내장 메소드가 있을 줄 알았는데 없다는 점이 의외의 포인트였다.
+하단 내비게이션 바는 모든 페이지에서 쓰이니 따로 class를 두어도 좋을 것 같다. 이 코드를 개선하게 된다면 가장 우선순위가 될 듯 하다.
+ */
+
+
 import 'package:flutter/material.dart';
 import "package:flutter_map/flutter_map.dart";
 import 'package:latlong2/latlong.dart';
@@ -26,8 +34,8 @@ class MapScreen extends StatefulWidget {
 }
 
 class _MapScreenState extends State<MapScreen> {
-  final LatLng userLocation = LatLng(37.4979, 127.0276); // 강남역 좌표
-  double _panelHeight = 100;
+  final LatLng userLocation = LatLng(37.4979, 127.0276); // 내 위치를 강남역 좌표로 고정한다. 이동에 따라 움직이는 기능 구현 X
+  double _panelHeight = 100; // 하단 슬라이드 메뉴의 높이
 
   @override
   Widget build(BuildContext context) {
@@ -38,7 +46,7 @@ class _MapScreenState extends State<MapScreen> {
           FlutterMap(
             options: MapOptions(
               initialCenter: LatLng(37.4979, 127.0276), // 강남역 좌표
-              initialZoom: 17,
+              initialZoom: 17, // 줌 레벨이 높아질수록 더 좁은 지역을 표시한다.
             ),
             children: [
               // flutter map 패키지에서 지도를 표시하는 부분
@@ -106,6 +114,7 @@ class _MapScreenState extends State<MapScreen> {
               ),
             ),
           ),
+
           // 이 지역 원픽 맛집을 클릭했을 때 애니메이션
           GestureDetector(
             onVerticalDragUpdate: (details) {
@@ -218,6 +227,7 @@ class _MapScreenState extends State<MapScreen> {
         ),
       ),
       SizedBox(height: 50),
+      // 두번째 맛집
       ListTile(
         //leading: Icon(Icons.fastfood, color: Colors.orange),
         title: Text("신토불이떡볶이"),
