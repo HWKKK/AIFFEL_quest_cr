@@ -31,7 +31,8 @@ class _HomeScreenState extends State<HomeScreen> {
   Future<void> _fetchPrediction({required bool fetchClass}) async {
     if (_selectedImage == null) {
       print("⚠️ 먼저 이미지를 선택하세요!");
-      return;
+      await _pickImage();
+      if (_selectedImage == null) return; // 사용자가 이미지 선택 안 하면 종료
     }
 
     final result = await ApiService().predictJellyfish(_selectedImage!);
