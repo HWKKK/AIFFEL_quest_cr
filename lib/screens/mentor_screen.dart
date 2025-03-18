@@ -2,59 +2,39 @@ import 'package:flutter/material.dart';
 import 'chat_screen.dart';
 
 class MentorScreen extends StatelessWidget {
+  final String mentorId;
   final String mentorName;
   final String mentorImage;
-  final String mentorId; // 🔥 mentorId 추가
-  final String categoryTitle; // 선택한 관심 분야
+  final String categoryTitle;
 
   const MentorScreen({
     super.key,
-    required this.mentorName,
+    required this.mentorId,
+    required this.mentorName,  // ✅ mentorName 추가
     required this.mentorImage,
-    required this.mentorId, // 🔥 mentorId 추가
     required this.categoryTitle,
   });
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(title: const Text("멘토 찾기")),
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 20),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            const SizedBox(height: 80),
+            const SizedBox(height: 20),
 
-            // 뒤로 가기 버튼
-            IconButton(
-              icon: const Icon(Icons.arrow_back),
-              onPressed: () => Navigator.pop(context),
+            // 🔥 "멘토 찾기" 제목
+            const Text(
+              "시간을 초월한\n당신만의 멘토를 찾았어요!",
+              style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold),
             ),
 
-            // "시간을 초월한 ~ 찾았어요!" + 폭죽 아이콘
-            Row(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                const Expanded(
-                  child: Text(
-                    "\n\n시간을 초월한\n당신만의 멘토를 찾았어요!",
-                    style: TextStyle(
-                      fontSize: 22,
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
-                ),
-                Image.asset(
-                  'assets/icons/firework.png',
-                  width: 150,
-                  height: 150,
-                ),
-              ],
-            ),
+            const SizedBox(height: 20),
 
-            const SizedBox(height: 30),
-
-            // 멘토 카드 UI
+            // 🔥 멘토 카드 UI
             Container(
               padding: const EdgeInsets.all(16),
               decoration: BoxDecoration(
@@ -96,13 +76,16 @@ class MentorScreen extends StatelessWidget {
                   ),
                   const SizedBox(height: 20),
 
-                  // 🔥 채팅 화면으로 이동할 때 mentorId를 전달!
+                  // 🔥 "시작하기" 버튼 → ChatScreen 이동
                   ElevatedButton(
                     onPressed: () {
                       Navigator.push(
                         context,
                         MaterialPageRoute(
-                          builder: (context) => ChatScreen(mentorId: mentorId),
+                          builder: (context) => ChatScreen(
+                            mentorId: mentorId,
+                            mentorName: mentorName,  // ✅ mentorName 전달
+                          ),
                         ),
                       );
                     },
