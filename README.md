@@ -1,16 +1,37 @@
-# main_quest
+# AI 멘토링 앱
 
-A new Flutter project.
+## 주요 기능
+- 사용자가 관심 있는 분야를 선택하면, **AI가 해당 분야의 역사적 인물(멘토)**처럼 답변을 제공하는 대화형 학습 경험을 제공
 
-## Getting Started
+</br>
 
-This project is a starting point for a Flutter application.
+## 와이어프레임
+![와이어프레임](https://github.com/user-attachments/assets/23e468ae-5ff9-4d0b-8847-952fe585b7a7)
 
-A few resources to get you started if this is your first Flutter project:
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+</br>
+
+
+## 정보 구조도
+  홈 화면 (HomeScreen)   
+  ├── 멘토 리스트   
+  │    ├── 관심 분야 선택   
+  │    ├── AI 멘토 추천   
+  │         ├── 멘토와 채팅   
+  │              ├── 회고 작성 & 대화 저장   
+  │              ├── 대화 리셋   
+  │   
+  ├── 내 멘토링  ← (하단 네비게이션 바)   
+  │    ├── 저장된 멘토링 기록 리스트   
+  │         ├── 특정 멘토링 상세보기   
+  │              ├── 저장된 대화 내용 조회   
+  │              ├── 회고 내용 확인   
+
+
+</br>
+
+
+## 프로토타이핑
+https://github.com/user-attachments/assets/df545a49-414e-486d-b1b3-896b51f08a3c
+
